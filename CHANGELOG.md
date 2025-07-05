@@ -32,13 +32,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2024-01-XX
 
 ### Added
-- 🎨 **Rose-pine inspired color scheme** - Beautiful, eye-friendly colors
+- 🎨 **Beautiful dark color schemes** - Eye-friendly colors for long coding sessions
 - 🖥️ **JetBrains Mono Nerd Font** - Crisp, readable font with icons
 - 🎯 **Powerline tabs** - Elegant tab bar with slanted design
 - ⚡ **Custom shortcuts** - Intuitive keyboard navigation
 - 🌙 **Multiple dark themes** - 7 beautiful dark themes:
-  - Rose-pine Main (default)
-  - Rose-pine Moon (darker variant)
+  - Main Theme (default)
+- Moon Theme (darker variant)
   - Tokyo Night Dark
   - Catppuccin Mocha
   - Dracula
@@ -119,7 +119,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [GitHub Repository](https://github.com/maurux01/mykittydots)
 - [Kitty Terminal](https://sw.kovidgoyal.net/kitty/)
-- [Rose-pine Theme](https://rosepinetheme.com/)
 - [JetBrains Mono Font](https://www.jetbrains.com/lp/mono/)
 
 ---

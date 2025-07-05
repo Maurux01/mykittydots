@@ -136,7 +136,7 @@ echo -e "\033[38;2;196;167;231m"
 echo "╔══════════════════════════════════════════════════════════════╗"
 echo "║                    🐱 Welcome to Kitty! 🐱                    ║"
 echo "║                                                              ║"
-echo "║  🎨 Theme: Rose-pine inspired                                ║"
+echo "║  🎨 Theme: Beautiful dark themes                            ║"
 echo "║  🖥️  Font: JetBrains Mono Nerd Font                          ║"
 echo "║  🎯 Features: Powerline tabs, custom shortcuts               ║"
 echo "║  🌙 7 beautiful dark themes available                        ║"
@@ -186,12 +186,12 @@ uncomment_theme() {
 case "$1" in
     "main"|"rose-pine")
         comment_all_themes
-        echo "🎨 Switched to Rose-pine Main theme"
+        echo "🎨 Switched to Main theme"
         ;;
     "moon"|"rose-pine-moon")
         comment_all_themes
-        uncomment_theme "ROSE-PINE MOON" "TOKYO NIGHT"
-        echo "🌙 Switched to Rose-pine Moon theme"
+        uncomment_theme "MOON THEME" "TOKYO NIGHT"
+        echo "🌙 Switched to Moon theme"
         ;;
     "tokyo"|"tokyo-night")
         comment_all_themes
@@ -220,8 +220,8 @@ case "$1" in
         ;;
     "list"|"themes")
         echo "🎨 Available themes:"
-        echo "  main/rose-pine     - Rose-pine Main (default)"
-        echo "  moon/rose-pine-moon - Rose-pine Moon (darker)"
+        echo "  main/rose-pine     - Main Theme (default)"
+        echo "  moon/rose-pine-moon - Moon Theme (darker)"
         echo "  tokyo/tokyo-night  - Tokyo Night Dark"
         echo "  catppuccin/mocha   - Catppuccin Mocha"
         echo "  dracula            - Dracula"
@@ -234,8 +234,8 @@ case "$1" in
         echo "❌ Unknown theme: $1"
         echo ""
         echo "🎨 Available themes:"
-        echo "  main/rose-pine     - Rose-pine Main (default)"
-        echo "  moon/rose-pine-moon - Rose-pine Moon (darker)"
+        echo "  main/rose-pine     - Main Theme (default)"
+        echo "  moon/rose-pine-moon - Moon Theme (darker)"
         echo "  tokyo/tokyo-night  - Tokyo Night Dark"
         echo "  catppuccin/mocha   - Catppuccin Mocha"
         echo "  dracula            - Dracula"
@@ -283,8 +283,8 @@ echo "2. If fonts don't load properly, restart your system"
 echo "3. Use the theme switcher: $KITTY_CONFIG_DIR/theme-switcher.sh"
 echo
 echo -e "${CYAN}Theme switching:${NC}"
-echo "  $KITTY_CONFIG_DIR/theme-switcher.sh main        # Rose-pine Main (default)"
-echo "  $KITTY_CONFIG_DIR/theme-switcher.sh moon        # Rose-pine Moon (darker)"
+echo "  $KITTY_CONFIG_DIR/theme-switcher.sh main        # Main Theme (default)"
+echo "  $KITTY_CONFIG_DIR/theme-switcher.sh moon        # Moon Theme (darker)"
 echo "  $KITTY_CONFIG_DIR/theme-switcher.sh tokyo       # Tokyo Night Dark"
 echo "  $KITTY_CONFIG_DIR/theme-switcher.sh catppuccin  # Catppuccin Mocha"
 echo "  $KITTY_CONFIG_DIR/theme-switcher.sh dracula     # Dracula"

@@ -3,13 +3,15 @@
 <div align="center">
 
 ![Kitty Terminal](https://img.shields.io/badge/Kitty-Terminal-000000?style=for-the-badge&logo=kitty&logoColor=white)
-![Rose Pine](https://img.shields.io/badge/Theme-Rose%20Pine-eb6f92?style=for-the-badge)
-![Arch Linux](https://img.shields.io/badge/OS-Arch%20Linux-1793d1?style=for-the-badge&logo=arch-linux&logoColor=white)
+![Dark Themes](https://img.shields.io/badge/Themes-7%20Dark%20Themes-eb6f92?style=for-the-badge)
+![Cross Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20macOS-1793d1?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
 
-*A stunning Kitty terminal configuration inspired by Rose-pine theme with custom enhancements*
+*A stunning Kitty terminal configuration with beautiful dark themes and custom enhancements*
 
 [![Installation](https://img.shields.io/badge/Installation-Automated-brightgreen?style=for-the-badge)](install.sh)
-[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
+[![Contributing](https://img.shields.io/badge/Contributing-Welcome-success?style=for-the-badge)](CONTRIBUTING.md)
+[![Changelog](https://img.shields.io/badge/Changelog-Keep%20a%20Changelog-orange?style=for-the-badge)](CHANGELOG.md)
 
 </div>
 
@@ -17,17 +19,17 @@
 
 ## ✨ Features
 
-- 🎨 **Rose-pine inspired color scheme** - Beautiful, eye-friendly colors
+- 🎨 **Beautiful dark color schemes** - Eye-friendly colors for long coding sessions
 - 🖥️ **JetBrains Mono Nerd Font** - Crisp, readable font with icons
 - 🎯 **Powerline tabs** - Elegant tab bar with slanted design
 - ⚡ **Custom shortcuts** - Intuitive keyboard navigation
-- 🌙 **Multiple dark themes** - 7 beautiful dark themes including Rose-pine, Tokyo Night, Catppuccin, Dracula, Gruvbox, and Nord
+- 🌙 **Multiple dark themes** - 7 beautiful dark themes including Main, Moon, Tokyo Night, Catppuccin, Dracula, Gruvbox, and Nord
 - 🔧 **Easy customization** - Well-documented configuration
 - 🚀 **Performance optimized** - GPU-accelerated rendering
 
 ## 🎨 Color Palette
 
-The configuration uses the beautiful Rose-pine color palette:
+The configuration uses beautiful dark color palettes optimized for coding:
 
 | Color | Hex | Usage |
 |-------|-----|-------|
@@ -54,6 +56,13 @@ chmod +x install.sh
 ./install.sh
 ```
 
+The installation script will:
+- ✅ Install Kitty terminal (if not already installed)
+- ✅ Download and install JetBrains Mono Nerd Font
+- ✅ Copy configuration files to `~/.config/kitty/`
+- ✅ Create theme switcher and welcome scripts
+- ✅ Set up desktop entry (Linux)
+
 ### Manual Installation
 
 1. **Install Kitty terminal:**
@@ -66,6 +75,9 @@ chmod +x install.sh
    
    # Fedora
    sudo dnf install kitty
+   
+   # macOS (with Homebrew)
+   brew install kitty
    ```
 
 2. **Install JetBrains Mono Nerd Font:**
@@ -109,12 +121,12 @@ chmod +x install.sh
 
 The configuration includes seven beautiful dark themes:
 
-### Rose-pine Main (Default)
+### Main Theme (Default)
 - Beautiful dark theme with soft colors
 - Perfect for long coding sessions
 
-### Rose-pine Moon
-- Darker variant of Rose-pine
+### Moon Theme
+- Darker variant of the main theme
 - Ideal for low-light conditions
 
 ### Tokyo Night Dark
@@ -141,8 +153,8 @@ The configuration includes seven beautiful dark themes:
 
 ```bash
 # Use the theme switcher script
-~/.config/kitty/theme-switcher.sh main        # Rose-pine Main (default)
-~/.config/kitty/theme-switcher.sh moon        # Rose-pine Moon
+~/.config/kitty/theme-switcher.sh main        # Main Theme (default)
+~/.config/kitty/theme-switcher.sh moon        # Moon Theme
 ~/.config/kitty/theme-switcher.sh tokyo       # Tokyo Night Dark
 ~/.config/kitty/theme-switcher.sh catppuccin  # Catppuccin Mocha
 ~/.config/kitty/theme-switcher.sh dracula     # Dracula
@@ -191,20 +203,45 @@ mykittydots/
 ├── kitty.conf          # Main configuration file
 ├── install.sh          # Automated installation script
 ├── README.md           # This file
-└── LICENSE             # MIT License
+├── LICENSE             # MIT License
+├── CONTRIBUTING.md     # Contributing guidelines
+├── CHANGELOG.md        # Version history and changes
+├── .gitignore          # Git ignore rules
+└── .editorconfig       # Editor configuration
 ```
 
 After installation, additional files are created in `~/.config/kitty/`:
 - `welcome.sh` - Welcome message script
 - `theme-switcher.sh` - Theme switching utility
+- `kitty.desktop` - Desktop entry (Linux)
 
 ## 🎯 Integration with Neovim
 
 This configuration is designed to work perfectly with your Neovim setup:
 
-- **Color consistency** - Matches Rose-pine theme
+- **Color consistency** - Beautiful dark themes
 - **Font compatibility** - Uses the same JetBrains Mono Nerd Font
 - **Terminal integration** - Proper 24-bit color support
+
+## 📞 Support
+
+### Getting Help
+
+If you encounter any issues or have questions:
+
+1. **Check the [Troubleshooting](#-troubleshooting) section** above
+2. **Search existing issues** on GitHub
+3. **Create a new issue** with detailed information:
+   - Your operating system and version
+   - Kitty terminal version
+   - Steps to reproduce the problem
+   - Error messages (if any)
+
+### Community
+
+- **GitHub Issues**: [Report bugs or request features](https://github.com/maurux01/mykittydots/issues)
+- **GitHub Discussions**: [Ask questions and share tips](https://github.com/maurux01/mykittydots/discussions)
+- **Contributing**: [Help improve the project](CONTRIBUTING.md)
 
 ## 🐛 Troubleshooting
 
@@ -229,26 +266,81 @@ echo -e "\x1b[38;2;255;100;100mTRUECOLOR\x1b[0m"
 kitty --config ~/.config/kitty/kitty.conf
 ```
 
+### Theme Switcher Not Working
+```bash
+# Check if the script exists and is executable
+ls -la ~/.config/kitty/theme-switcher.sh
+chmod +x ~/.config/kitty/theme-switcher.sh
+
+# Test theme switching
+~/.config/kitty/theme-switcher.sh list
+```
+
+### Installation Issues
+```bash
+# Check Kitty installation
+which kitty
+kitty --version
+
+# Check font installation
+fc-list | grep -i "jetbrains"
+
+# Verify configuration directory
+ls -la ~/.config/kitty/
+```
+
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTING.md) before submitting a Pull Request.
+
+### Quick Start for Contributors
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+3. Commit your changes (`git commit -m 'feat: add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+
+### Development Setup
+
+```bash
+# Clone your fork
+git clone https://github.com/YOUR_USERNAME/mykittydots.git
+cd mykittydots
+
+# Test the installation script
+./install.sh
+
+# Test theme switching
+~/.config/kitty/theme-switcher.sh list
+```
+
+For detailed information, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## 📝 Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for a detailed history of changes and releases.
+
 ## 🙏 Acknowledgments
 
-- [Rose-pine theme](https://rosepinetheme.com/) for the beautiful color palette
+- [Kitty Terminal](https://sw.kovidgoyal.net/kitty/) for the amazing terminal emulator
 - [JetBrains Mono](https://www.jetbrains.com/lp/mono/) for the excellent font
 - [Nerd Fonts](https://www.nerdfonts.com/) for the icon support
-- [Kitty terminal](https://sw.kovidgoyal.net/kitty/) for the amazing terminal emulator
+- [Kitty Terminal](https://sw.kovidgoyal.net/kitty/) for the amazing terminal emulator
+
+---
+
+<div align="center">
+
+**⭐ If you find this project useful, please give it a star! ⭐**
+
+Made with ❤️ by [maurux01](https://github.com/maurux01)
+
+</div>
 
 ## 📞 Support
 
