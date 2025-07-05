@@ -1,0 +1,88 @@
+# =============================================================================
+#                           🐱 KITTY DOTS .GITIGNORE 🐱
+# =============================================================================
+# Git ignore file for MyKittyDots repository
+# =============================================================================
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Font files (if downloaded during development)
+*.ttf
+*.otf
+*.woff
+*.woff2
+fonts/
+
+# Screenshots and images (if not meant to be in repo)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+screenshots/
+
+# Configuration backups
+*.conf.bak
+*.conf.old
+
+# Installation artifacts
+install.log
+setup.log
+
+# Package manager files
+package-lock.json
+yarn.lock
+node_modules/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Shell script backups
+*.sh~
+
+# Local configuration overrides
+local.conf
+user.conf
+
+# Test files
+test_*.sh
+*.test
+
+# Documentation build files
+docs/_build/
+docs/build/
+
+# Archive files
+*.zip
+*.tar.gz
+*.rar
+
+# Font cache files
+fontconfig/
+fc-cache.log 
