@@ -33,7 +33,7 @@ print_error() {
 
 print_header() {
     echo -e "${CYAN}================================${NC}"
-    echo -e "${CYAN}   🐱 KITTY INSTALLATION 🐱   ${NC}"
+    echo -e "${CYAN}   🐱 KITTY INSTALLATION 🐱     ${NC}"
     echo -e "${CYAN}================================${NC}"
 }
 
