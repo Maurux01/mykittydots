@@ -8,12 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Initial project setup
-- Comprehensive documentation
-- Contributing guidelines
+- 🎨 **Grubvox theme** - Beautiful retro-inspired color scheme with nerdfont support
+- 🖥️ **Enhanced nerdfont support** - Improved symbol mapping for better icon display
+- 🌙 **Grubvox Light theme** - Light variant of the Grubvox theme
 
 ### Changed
-- N/A
+- 🎨 **Main theme** - Changed from Rose Pine to Grubvox as the default theme
+- 🎨 **Color palette** - Updated all color schemes to use Grubvox-inspired colors
+- 📝 **Documentation** - Updated README and installation script to reflect new theme
+- 🎯 **Theme switcher** - Updated to prioritize Grubvox themes
 
 ### Deprecated
 - N/A
@@ -32,17 +35,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2024-01-XX
 
 ### Added
-- 🎨 **Beautiful dark color schemes** - Eye-friendly colors for long coding sessions
+- 🎨 **Beautiful color schemes** - Eye-friendly colors for long coding sessions
 - 🖥️ **JetBrains Mono Nerd Font** - Crisp, readable font with icons
 - 🎯 **Powerline tabs** - Elegant tab bar with slanted design
 - ⚡ **Custom shortcuts** - Intuitive keyboard navigation
-- 🌙 **Multiple dark themes** - 7 beautiful dark themes:
-  - Main Theme (default)
-- Moon Theme (darker variant)
+- 🌙 **Multiple themes** - 7 beautiful themes:
+  - Grubvox Dark (default)
+  - Grubvox Light
+  - Rose Pine
   - Tokyo Night Dark
   - Catppuccin Mocha
   - Dracula
-  - Gruvbox Dark
   - Nord
 - 🔧 **Easy customization** - Well-documented configuration
 - 🚀 **Performance optimized** - GPU-accelerated rendering
@@ -108,7 +111,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Version 1.0.0
 - Initial release with complete Kitty configuration
-- 7 beautiful dark themes
+- 7 beautiful themes with Grubvox as default
 - Automated installation script
 - Comprehensive documentation
 - Cross-platform support
@@ -120,6 +123,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [GitHub Repository](https://github.com/maurux01/mykittydots)
 - [Kitty Terminal](https://sw.kovidgoyal.net/kitty/)
 - [JetBrains Mono Font](https://www.jetbrains.com/lp/mono/)
+- [Grubvox Theme](https://github.com/morhetz/gruvbox)
 
 ---
 
@@ -129,6 +133,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Configuration is optimized for 24-bit color terminals
 - Font installation requires internet connection for download
 - Installation script requires sudo privileges for package installation
+- Grubvox theme provides excellent contrast and readability
 
 ---
 

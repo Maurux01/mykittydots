@@ -4,7 +4,7 @@
 #                           🐱 KITTY INSTALLATION SCRIPT 🐱
 # =============================================================================
 # Author: Mauro Infante (maurux01)
-# Description: Automated installation script for beautiful Kitty terminal config
+# Description: Automated installation script for beautiful Kitty terminal config with Grubvox theme
 # =============================================================================
 
 set -e
@@ -132,14 +132,14 @@ cat > "$KITTY_CONFIG_DIR/welcome.sh" << 'EOF'
 #!/bin/bash
 
 # Welcome message for Kitty terminal
-echo -e "\033[38;2;196;167;231m"
+echo -e "\033[38;2;131;165;152m"
 echo "╔══════════════════════════════════════════════════════════════╗"
 echo "║                    🐱 Welcome to Kitty! 🐱                    ║"
 echo "║                                                              ║"
-echo "║  🎨 Theme: Beautiful dark themes                            ║"
+echo "║  🎨 Theme: Grubvox with nerdfont support                    ║"
 echo "║  🖥️  Font: JetBrains Mono Nerd Font                          ║"
 echo "║  🎯 Features: Powerline tabs, custom shortcuts               ║"
-echo "║  🌙 7 beautiful dark themes available                        ║"
+echo "║  🌙 7 beautiful themes available                             ║"
 echo "║                                                              ║"
 echo "║  📋 Useful shortcuts:                                        ║"
 echo "║     Ctrl+Shift+T: New tab                                    ║"
@@ -154,8 +154,6 @@ echo "╚═══════════════════════�
 echo -e "\033[0m"
 EOF
 
-
-
 chmod +x "$KITTY_CONFIG_DIR/welcome.sh"
 
 # Create a theme switcher script
@@ -168,11 +166,11 @@ KITTY_CONFIG="$HOME/.config/kitty/kitty.conf"
 
 # Function to comment out all theme sections
 comment_all_themes() {
-    sed -i '/^# === ROSE-PINE MOON/,/^# === TOKYO NIGHT/s/^#//' "$KITTY_CONFIG" 2>/dev/null || true
-    sed -i '/^# === TOKYO NIGHT/,/^# === CATPPUCCIN MOCHA/s/^#//' "$KITTY_CONFIG" 2>/dev/null || true
+    sed -i '/^# === GRUVBOX LIGHT/,/^# === ROSE-PINE MAIN/s/^#//' "$KITTY_CONFIG" 2>/dev/null || true
+    sed -i '/^# === ROSE-PINE MAIN/,/^# === TOKYO NIGHT DARK/s/^#//' "$KITTY_CONFIG" 2>/dev/null || true
+    sed -i '/^# === TOKYO NIGHT DARK/,/^# === CATPPUCCIN MOCHA/s/^#//' "$KITTY_CONFIG" 2>/dev/null || true
     sed -i '/^# === CATPPUCCIN MOCHA/,/^# === DRACULA/s/^#//' "$KITTY_CONFIG" 2>/dev/null || true
-    sed -i '/^# === DRACULA/,/^# === GRUVBOX DARK/s/^#//' "$KITTY_CONFIG" 2>/dev/null || true
-    sed -i '/^# === GRUVBOX DARK/,/^# === NORD/s/^#//' "$KITTY_CONFIG" 2>/dev/null || true
+    sed -i '/^# === DRACULA/,/^# === NORD/s/^#//' "$KITTY_CONFIG" 2>/dev/null || true
     sed -i '/^# === NORD/,/^# === USAGE NOTES/s/^#//' "$KITTY_CONFIG" 2>/dev/null || true
 }
 
@@ -184,18 +182,23 @@ uncomment_theme() {
 }
 
 case "$1" in
-    "main"|"rose-pine")
+    "gruvbox"|"gruvbox-dark")
         comment_all_themes
-        echo "🎨 Switched to Main theme"
+        echo "🟫 Switched to Grubvox Dark theme"
         ;;
-    "moon"|"rose-pine-moon")
+    "gruvbox-light")
         comment_all_themes
-        uncomment_theme "MOON THEME" "TOKYO NIGHT"
-        echo "🌙 Switched to Moon theme"
+        uncomment_theme "GRUVBOX LIGHT" "ROSE-PINE MAIN"
+        echo "🟨 Switched to Grubvox Light theme"
+        ;;
+    "rose-pine"|"main")
+        comment_all_themes
+        uncomment_theme "ROSE-PINE MAIN" "TOKYO NIGHT DARK"
+        echo "🎨 Switched to Rose Pine theme"
         ;;
     "tokyo"|"tokyo-night")
         comment_all_themes
-        uncomment_theme "TOKYO NIGHT" "CATPPUCCIN MOCHA"
+        uncomment_theme "TOKYO NIGHT DARK" "CATPPUCCIN MOCHA"
         echo "🌃 Switched to Tokyo Night theme"
         ;;
     "catppuccin"|"mocha")
@@ -205,13 +208,8 @@ case "$1" in
         ;;
     "dracula")
         comment_all_themes
-        uncomment_theme "DRACULA" "GRUVBOX DARK"
+        uncomment_theme "DRACULA" "NORD"
         echo "🧛 Switched to Dracula theme"
-        ;;
-    "gruvbox"|"gruvbox-dark")
-        comment_all_themes
-        uncomment_theme "GRUVBOX DARK" "NORD"
-        echo "🟫 Switched to Gruvbox Dark theme"
         ;;
     "nord")
         comment_all_themes
@@ -220,13 +218,13 @@ case "$1" in
         ;;
     "list"|"themes")
         echo "🎨 Available themes:"
-        echo "  main/rose-pine     - Main Theme (default)"
-        echo "  moon/rose-pine-moon - Moon Theme (darker)"
-        echo "  tokyo/tokyo-night  - Tokyo Night Dark"
-        echo "  catppuccin/mocha   - Catppuccin Mocha"
-        echo "  dracula            - Dracula"
-        echo "  gruvbox/gruvbox-dark - Gruvbox Dark"
-        echo "  nord               - Nord"
+        echo "  gruvbox/gruvbox-dark - Grubvox Dark (default)"
+        echo "  gruvbox-light        - Grubvox Light"
+        echo "  rose-pine/main       - Rose Pine"
+        echo "  tokyo/tokyo-night    - Tokyo Night Dark"
+        echo "  catppuccin/mocha     - Catppuccin Mocha"
+        echo "  dracula              - Dracula"
+        echo "  nord                 - Nord"
         echo ""
         echo "Usage: $0 {theme_name}"
         ;;
@@ -234,13 +232,13 @@ case "$1" in
         echo "❌ Unknown theme: $1"
         echo ""
         echo "🎨 Available themes:"
-        echo "  main/rose-pine     - Main Theme (default)"
-        echo "  moon/rose-pine-moon - Moon Theme (darker)"
-        echo "  tokyo/tokyo-night  - Tokyo Night Dark"
-        echo "  catppuccin/mocha   - Catppuccin Mocha"
-        echo "  dracula            - Dracula"
-        echo "  gruvbox/gruvbox-dark - Gruvbox Dark"
-        echo "  nord               - Nord"
+        echo "  gruvbox/gruvbox-dark - Grubvox Dark (default)"
+        echo "  gruvbox-light        - Grubvox Light"
+        echo "  rose-pine/main       - Rose Pine"
+        echo "  tokyo/tokyo-night    - Tokyo Night Dark"
+        echo "  catppuccin/mocha     - Catppuccin Mocha"
+        echo "  dracula              - Dracula"
+        echo "  nord                 - Nord"
         echo ""
         echo "Usage: $0 {theme_name}"
         echo "       $0 list        - Show all available themes"
@@ -248,19 +246,18 @@ case "$1" in
         ;;
 esac
 
-# Send signal to reload Kitty configuration
-pkill -USR1 kitty 2>/dev/null || true
-echo "✅ Theme applied! Restart Kitty if changes don't appear immediately."
+# Reload Kitty configuration
+if command -v kitty &> /dev/null; then
+    kitty @ set-colors --all "$KITTY_CONFIG"
+fi
 EOF
 
 chmod +x "$KITTY_CONFIG_DIR/theme-switcher.sh"
 
-# Create desktop entry for easy access
+# Create desktop entry for Linux
 if [[ "$OS" == "linux" ]]; then
     print_status "Creating desktop entry..."
-    mkdir -p "$HOME/.local/share/applications"
-    
-    cat > "$HOME/.local/share/applications/kitty.desktop" << EOF
+    cat > "$KITTY_CONFIG_DIR/kitty.desktop" << EOF
 [Desktop Entry]
 Version=1.0
 Type=Application
@@ -271,29 +268,40 @@ Icon=utilities-terminal
 Terminal=false
 Categories=System;TerminalEmulator;
 EOF
+
+    # Copy to applications directory if possible
+    if [[ -d "$HOME/.local/share/applications" ]]; then
+        cp "$KITTY_CONFIG_DIR/kitty.desktop" "$HOME/.local/share/applications/"
+        print_status "Desktop entry created in ~/.local/share/applications/"
+    fi
 fi
 
-# Final instructions
-echo
-print_status "Installation completed successfully! 🎉"
-echo
-echo -e "${CYAN}Next steps:${NC}"
-echo "1. Restart Kitty terminal or run: kitty"
-echo "2. If fonts don't load properly, restart your system"
-echo "3. Use the theme switcher: $KITTY_CONFIG_DIR/theme-switcher.sh"
-echo
-echo -e "${CYAN}Theme switching:${NC}"
-echo "  $KITTY_CONFIG_DIR/theme-switcher.sh main        # Main Theme (default)"
-echo "  $KITTY_CONFIG_DIR/theme-switcher.sh moon        # Moon Theme (darker)"
-echo "  $KITTY_CONFIG_DIR/theme-switcher.sh tokyo       # Tokyo Night Dark"
-echo "  $KITTY_CONFIG_DIR/theme-switcher.sh catppuccin  # Catppuccin Mocha"
-echo "  $KITTY_CONFIG_DIR/theme-switcher.sh dracula     # Dracula"
-echo "  $KITTY_CONFIG_DIR/theme-switcher.sh gruvbox     # Gruvbox Dark"
-echo "  $KITTY_CONFIG_DIR/theme-switcher.sh nord        # Nord"
-echo "  $KITTY_CONFIG_DIR/theme-switcher.sh list        # Show all themes"
-echo
-
-echo
-echo -e "${CYAN}Configuration file:${NC} $KITTY_CONFIG_DIR/kitty.conf"
-echo
-print_status "Enjoy your beautiful Kitty terminal! 🐱✨" 
+# Final success message
+echo ""
+print_status "🎉 Installation completed successfully!"
+echo ""
+echo -e "${CYAN}================================${NC}"
+echo -e "${CYAN}   🎨 GRUBVOX THEME INSTALLED 🎨   ${NC}"
+echo -e "${CYAN}================================${NC}"
+echo ""
+echo "📁 Configuration files installed in: $KITTY_CONFIG_DIR"
+echo "🎨 Theme: Grubvox with nerdfont support"
+echo "🖥️  Font: JetBrains Mono Nerd Font"
+echo ""
+echo "🚀 To start using your new terminal:"
+echo "   kitty"
+echo ""
+echo "🎨 To switch themes:"
+echo "   ~/.config/kitty/theme-switcher.sh {theme_name}"
+echo "   ~/.config/kitty/theme-switcher.sh list"
+echo ""
+echo "📋 Available themes:"
+echo "   • gruvbox (default) - Grubvox Dark"
+echo "   • gruvbox-light - Grubvox Light"
+echo "   • rose-pine - Rose Pine"
+echo "   • tokyo-night - Tokyo Night"
+echo "   • catppuccin - Catppuccin Mocha"
+echo "   • dracula - Dracula"
+echo "   • nord - Nord"
+echo ""
+echo "🌟 Enjoy your beautiful terminal!" 

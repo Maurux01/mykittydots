@@ -3,11 +3,11 @@
 <div align="center">
 
 ![Kitty Terminal](https://img.shields.io/badge/Kitty-Terminal-000000?style=for-the-badge&logo=kitty&logoColor=white)
-![Dark Themes](https://img.shields.io/badge/Themes-7%20Dark%20Themes-eb6f92?style=for-the-badge)
+![Grubvox Theme](https://img.shields.io/badge/Theme-Grubvox%20with%20Nerdfont-ebdbb2?style=for-the-badge)
 ![Cross Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20macOS-1793d1?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
 
-*A stunning Kitty terminal configuration with beautiful dark themes and custom enhancements*
+*A stunning Kitty terminal configuration with Grubvox theme and nerdfont support*
 
 [![Installation](https://img.shields.io/badge/Installation-Automated-brightgreen?style=for-the-badge)](install.sh)
 [![Contributing](https://img.shields.io/badge/Contributing-Welcome-success?style=for-the-badge)](CONTRIBUTING.md)
@@ -19,28 +19,28 @@
 
 ## ✨ Features
 
-- 🎨 **Beautiful dark color schemes** - Eye-friendly colors for long coding sessions
+- 🎨 **Grubvox theme** - Beautiful retro-inspired color scheme with nerdfont support
 - 🖥️ **JetBrains Mono Nerd Font** - Crisp, readable font with icons
 - 🎯 **Powerline tabs** - Elegant tab bar with slanted design
 - ⚡ **Custom shortcuts** - Intuitive keyboard navigation
-- 🌙 **Multiple dark themes** - 7 beautiful dark themes including Main, Moon, Tokyo Night, Catppuccin, Dracula, Gruvbox, and Nord
+- 🌙 **Multiple themes** - 7 beautiful themes including Grubvox, Rose Pine, Tokyo Night, Catppuccin, Dracula, and Nord
 - 🔧 **Easy customization** - Well-documented configuration
 - 🚀 **Performance optimized** - GPU-accelerated rendering
 
 ## 🎨 Color Palette
 
-The configuration uses beautiful dark color palettes optimized for coding:
+The configuration uses the beautiful Grubvox color palette:
 
 | Color | Hex | Usage |
 |-------|-----|-------|
-| Background | `#191724` | Main background |
-| Foreground | `#e0def4` | Text color |
-| Selection | `#31748f` | Selected text background |
-| Accent | `#c4a7e7` | URLs, borders |
-| Red | `#eb6f92` | Errors, warnings |
-| Green | `#9ccfd8` | Success, git additions |
-| Yellow | `#f6c177` | Warnings, git modifications |
-| Blue | `#31748f` | Info, git deletions |
+| Background | `#282828` | Main background |
+| Foreground | `#ebdbb2` | Text color |
+| Selection | `#504945` | Selected text background |
+| Accent | `#83a598` | URLs, borders |
+| Red | `#cc241d` | Errors, warnings |
+| Green | `#98971a` | Success, git additions |
+| Yellow | `#d79921` | Warnings, git modifications |
+| Blue | `#458588` | Info, git deletions |
 
 ## 🚀 Quick Installation
 
@@ -119,15 +119,20 @@ The installation script will:
 
 ## 🌙 Theme Switching
 
-The configuration includes seven beautiful dark themes:
+The configuration includes seven beautiful themes:
 
-### Main Theme (Default)
-- Beautiful dark theme with soft colors
+### Grubvox Dark (Default)
+- Retro-inspired dark theme with warm colors
 - Perfect for long coding sessions
+- Excellent contrast and readability
 
-### Moon Theme
-- Darker variant of the main theme
-- Ideal for low-light conditions
+### Grubvox Light
+- Light variant of the Grubvox theme
+- Great for bright environments
+
+### Rose Pine
+- Beautiful dark theme with soft colors
+- Ideal for creative work
 
 ### Tokyo Night Dark
 - Modern dark theme with blue accents
@@ -141,10 +146,6 @@ The configuration includes seven beautiful dark themes:
 - Classic dark theme with vibrant colors
 - High contrast and readability
 
-### Gruvbox Dark
-- Retro-inspired dark theme
-- Warm and comfortable
-
 ### Nord
 - Clean and minimal dark theme
 - Arctic-inspired colors
@@ -153,14 +154,15 @@ The configuration includes seven beautiful dark themes:
 
 ```bash
 # Use the theme switcher script
-~/.config/kitty/theme-switcher.sh main        # Main Theme (default)
-~/.config/kitty/theme-switcher.sh moon        # Moon Theme
-~/.config/kitty/theme-switcher.sh tokyo       # Tokyo Night Dark
-~/.config/kitty/theme-switcher.sh catppuccin  # Catppuccin Mocha
-~/.config/kitty/theme-switcher.sh dracula     # Dracula
-~/.config/kitty/theme-switcher.sh gruvbox     # Gruvbox Dark
-~/.config/kitty/theme-switcher.sh nord        # Nord
-~/.config/kitty/theme-switcher.sh list        # Show all available themes
+~/.config/kitty/theme-switcher.sh gruvbox        # Grubvox Dark (default)
+~/.config/kitty/theme-switcher.sh gruvbox-light  # Grubvox Light
+~/.config/kitty/theme-switcher.sh rose-pine      # Rose Pine
+~/.config/kitty/theme-switcher.sh tokyo-night    # Tokyo Night Dark
+~/.config/kitty/theme-switcher.sh catppuccin     # Catppuccin Mocha
+~/.config/kitty/theme-switcher.sh dracula        # Dracula
+~/.config/kitty/theme-switcher.sh nord           # Nord
+~/.config/kitty/theme-switcher.sh list           # Show all available themes
+```
 
 ## 🔧 Customization
 
@@ -169,13 +171,13 @@ Edit `~/.config/kitty/kitty.conf` to modify colors:
 
 ```conf
 # Main colors
-background #191724
-foreground #e0def4
-selection_background #31748f
+background #282828
+foreground #ebdbb2
+selection_background #504945
 
 # Terminal colors (16 colors)
-color0 #26233a
-color1 #eb6f92
+color0 #282828
+color1 #cc241d
 # ... more colors
 ```
 
@@ -193,7 +195,7 @@ Customize window behavior:
 ```conf
 window_padding_width 15
 window_border_width 2
-window_border_color #31748f
+window_border_color #504945
 ```
 
 ## 📁 File Structure
@@ -219,7 +221,7 @@ After installation, additional files are created in `~/.config/kitty/`:
 
 This configuration is designed to work perfectly with your Neovim setup:
 
-- **Color consistency** - Beautiful dark themes
+- **Color consistency** - Beautiful Grubvox theme
 - **Font compatibility** - Uses the same JetBrains Mono Nerd Font
 - **Terminal integration** - Proper 24-bit color support
 
@@ -250,14 +252,25 @@ If you encounter any issues or have questions:
 # Update font cache
 fc-cache -fv
 
-# Restart your system
-sudo reboot
+# Restart your system or logout/login
 ```
 
-### Colors Not Displaying
+### Theme Not Applying
 ```bash
-# Check if your terminal supports true color
-echo -e "\x1b[38;2;255;100;100mTRUECOLOR\x1b[0m"
+# Restart Kitty
+pkill kitty
+kitty
+
+# Or reload configuration
+kitty @ set-colors --all ~/.config/kitty/kitty.conf
+```
+
+### Colors Not Working
+```bash
+# Check if your terminal supports 24-bit colors
+echo -e "\033[38;2;255;0;0mRed\033[0m"
+
+# If you see red text, 24-bit colors are supported
 ```
 
 ### Configuration Not Loading
@@ -291,7 +304,7 @@ ls -la ~/.config/kitty/
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTING.md) before submitting a Pull Request.
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ### Quick Start for Contributors
 
@@ -325,30 +338,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 See [CHANGELOG.md](CHANGELOG.md) for a detailed history of changes and releases.
 
-## 🙏 Acknowledgments
+## �� Acknowledgments
 
-- [Kitty Terminal](https://sw.kovidgoyal.net/kitty/) for the amazing terminal emulator
-- [JetBrains Mono](https://www.jetbrains.com/lp/mono/) for the excellent font
-- [Nerd Fonts](https://www.nerdfonts.com/) for the icon support
-- [Kitty Terminal](https://sw.kovidgoyal.net/kitty/) for the amazing terminal emulator
-
----
-
-<div align="center">
-
-**⭐ If you find this project useful, please give it a star! ⭐**
-
-Made with ❤️ by [maurux01](https://github.com/maurux01)
-
-</div>
-
-## 📞 Support
-
-If you have any questions or need help:
-
-- 🐛 [Report an issue](https://github.com/maurux01/mykittydots/issues)
-- 💬 [Start a discussion](https://github.com/maurux01/mykittydots/discussions)
-- 📧 Contact: [@maurux01](https://github.com/maurux01)
+- **Grubvox theme** - Beautiful retro-inspired color scheme
+- **JetBrains Mono** - Excellent programming font
+- **Nerd Fonts** - Icon font support
+- **Kitty Terminal** - Fast, feature-rich terminal emulator
 
 ---
 
@@ -356,6 +351,7 @@ If you have any questions or need help:
 
 **Made with ❤️ by [Mauro Infante](https://github.com/maurux01)**
 
-*Enjoy your beautiful terminal! 🐱✨*
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/maurux01)
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/maurux01)
 
 </div>
